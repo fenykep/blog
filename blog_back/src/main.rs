@@ -8,6 +8,7 @@ fn main() -> io::Result<()> {
     if args.len() < 2 {
         panic!("Usage: mkblog <input.md> [output.html]");
     }
+    // this is probably redundant
     let output_path = if args.len() == 2 {
         "output.html"
     } else {
@@ -24,7 +25,7 @@ fn main() -> io::Result<()> {
     let mut html_output = String::new();
     html::push_html(&mut html_output, parser);
 
-    let template_path = "template.html";
+    let template_path = "blogTemplate.html";
     let mut template_file = File::open(template_path)?;
     let mut template_content = String::new();
     template_file.read_to_string(&mut template_content)?;

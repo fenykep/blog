@@ -1,3 +1,4 @@
 output.html
 blog_back/target/*
-
+.DS_Store
+mkblog
